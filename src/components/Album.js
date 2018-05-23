@@ -5,15 +5,16 @@ class Album extends Component {
     constructor(props) {
     super(props);
 
-     const album = albumData.find( album => {
-       return album.slug === this.props.match.params.slug
-     });
+    const album = albumData.find( album => {
+      return album.slug === this.props.match.params.slug
+    });
 
-     this.state = {
-       album: album
-     };
+    console.log("Looked for album matching '" + this.props.match.params.slug + "', found: " + JSON.stringify(album));
+
+    this.state = {
+      album: album
+    };
   }
-
 
   render() {
     return (
