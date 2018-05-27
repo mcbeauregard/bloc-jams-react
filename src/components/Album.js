@@ -14,11 +14,14 @@ class Album extends Component {
     this.state = {
       album: album,
       currentSong: album.songs[0],
-      isPlaying: false
+      isPlaying: false,
+      isHovering: false,
     };
 
     this.audioElement = document.createElement('audio'); // audio element: not assigning to state so it doesn't re-render. Need to access the audio element from within class methods, however, so we assign it to this.
     this.audioElement.src = album.songs[0].audioSrc; // play the first song source. Song list is accessbile from album.song
+
+    this.handleMouseHover = this.handleMouseHover.bind(this);
   }
 
   play() { // metod that plays an audio file
@@ -46,14 +49,15 @@ class Album extends Component {
    }
  }
 
- mouseEnter = () => {
-   this.setState({ isMouseInside: true });
+ handleMouseHover() {
+   this.setState(this.toggleHoverState);
  }
 
- mouseLeave = () => {
-   this.setState({ isMouseInside: false });
+ toggleHoverState(state) {
+   return {
+     isHovering: !state.isHovering,
+   };
  }
-
 
   render() {
     return (
@@ -75,8 +79,10 @@ class Album extends Component {
           <tbody>
           {this.state.album.songs.map( (song, index) =>
               <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
-                  <button id="icon-play-pause">
-                     <span className="song-number">{index + 1}</span>
+                    <button id="icon-play-pause" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} >
+                    {this.state.isHovering &&
+                      <div>
+                     <span className="song-number">{index + 1}</span></div>}
                      <span className="ion-play"></span>
                      <span className="ion-pause"></span>
                    </button>
