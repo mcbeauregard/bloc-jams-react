@@ -12,9 +12,48 @@ class Album extends Component {
     console.log("Looked for album matching '" + this.props.match.params.slug + "', found: " + JSON.stringify(album));
 
     this.state = {
-      album: album
+      album: album,
+      currentSong: album.songs[0],
+      isPlaying: false
     };
+
+    this.audioElement = document.createElement('audio'); // audio element: not assigning to state so it doesn't re-render. Need to access the audio element from within class methods, however, so we assign it to this.
+    this.audioElement.src = album.songs[0].audioSrc; // play the first song source. Song list is accessbile from album.song
   }
+
+  play() { // metod that plays an audio file
+    this.audioElement.play(); // tells audio element to play song
+    this.setState({ isPlaying: true }); // state of isPlaying is true so song is playing
+  }
+
+   pause() {
+     this.audioElement.pause(); // tells audio element to pause song
+     this.setState({ isPlaying: false }); // state of isPlaying is false so song has stopped
+   }
+
+  setSong(song) { // recieves song
+   this.audioElement.src = song.audioSrc; // song is recieved and updates this.audioElement.src with the new song source
+   this.setState({ currentSong: song }); // song is recieved and updates this.state.currentSong
+ }
+
+ handleSongClick(song) {
+   const isSameSong = this.state.currentSong === song; // Event: when a song is clicked, this variable returns true if a user clicks on the current song, and false if otherwise.
+   if (this.state.isPlaying && isSameSong) { // if this.state.isPlaying and isSameSong are true, pause song, if not play song.
+     this.pause();
+   } else {
+   if (!isSameSong) { this.setSong(song); } // if another song is clicked, on click new song should play.
+     this.play();
+   }
+ }
+
+ mouseEnter = () => {
+   this.setState({ isMouseInside: true });
+ }
+
+ mouseLeave = () => {
+   this.setState({ isMouseInside: false });
+ }
+
 
   render() {
     return (
@@ -34,15 +73,17 @@ class Album extends Component {
             <col id="song-duration-column" />
           </colgroup>
           <tbody>
-          {
-            this.state.album.songs.map( (song, index) =>
-              <tr id="song-info" key={index}>
-                    <td id="song-number">{index + 1}</td>
+          {this.state.album.songs.map( (song, index) =>
+              <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
+                  <button id="icon-play-pause">
+                     <span className="song-number">{index + 1}</span>
+                     <span className="ion-play"></span>
+                     <span className="ion-pause"></span>
+                   </button>
                     <td id="song-title" >{song.title}</td>
                     <td id="song-duration">{Math.floor(song.duration / 60) + ":" + parseInt(song.duration  % 60) + " seconds" } </td>
               </tr>
-            )
-          }
+            )}
           </tbody>
         </table>
       </section>
