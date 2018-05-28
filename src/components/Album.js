@@ -51,11 +51,9 @@ class Album extends Component {
  mouseEnter = () => {
   this.setState({ isMouseInside: true });
 }
-
 mouseLeave = () => {
   this.setState({ isMouseInside: false });
 }
-
 
   render() {
     return (
@@ -76,8 +74,8 @@ mouseLeave = () => {
           </colgroup>
           <tbody>
           {this.state.album.songs.map( (song, index) =>
-            <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
-              {this.state.isMouseInside ? <button>'ion-play'</button> : 'song-number'}
+            <tr className="song" key={index} onClick={() => this.handleSongClick(song)}  onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
+              {this.state.isMouseInside && this.state.currentSong === song ? <button>'ion-play'</button> : 'song-number'}
                   <td className="song-number">
                     {this.state.currentSong === song ?
                     <span className={this.state.isPlaying ? 'ion-pause' : 'ion-play'}></span> : index+1}
