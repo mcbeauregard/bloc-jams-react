@@ -20,7 +20,6 @@ class Album extends Component {
     this.audioElement = document.createElement('audio'); // audio element: not assigning to state so it doesn't re-render. Need to access the audio element from within class methods, however, so we assign it to this.
     this.audioElement.src = album.songs[0].audioSrc; // play the first song source. Song list is accessbile from album.song
 
-    this.setHover = this.setHover.bind(this);
   }
 
   play() { // metod that plays an audio file
@@ -49,11 +48,13 @@ class Album extends Component {
    }
  }
 
- setHover(song) {
-   this.setState((prevState) =>
-     ({setHover: !prevState.setHover
-     }));
- }
+ mouseEnter = () => {
+  this.setState({ isMouseInside: true });
+}
+
+mouseLeave = () => {
+  this.setState({ isMouseInside: false });
+}
 
 
   render() {
@@ -75,11 +76,13 @@ class Album extends Component {
           </colgroup>
           <tbody>
           {this.state.album.songs.map( (song, index) =>
-              <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
-                  <td id="song-number">
+            <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
+              {this.state.isMouseInside ? <button>'ion-play'</button> : 'song-number'}
+                  <td className="song-number">
                     {this.state.currentSong === song ?
                     <span className={this.state.isPlaying ? 'ion-pause' : 'ion-play'}></span> : index+1}
                   </td>
+
                     <td id="song-title" >{song.title}</td>
                     <td id="song-duration">{Math.floor(song.duration / 60) + ":" + parseInt(song.duration  % 60) + " seconds" } </td>
               </tr>
