@@ -1,0 +1,44 @@
+.ion-play::before{
+  display: .song-number;
+}
+
+.ion-play {}
+
+.ion-pause {}
+
+.song-number {}
+
+.on-playing {}
+
+.off-show-play{}
+
+.show-number{}
+
+/* Song not playing, show song number */
+td.play-pause::before{
+  display: none;
+}
+
+/* Song paused, show play icon */
+td.not-playing .off-show-pause .ion-pause,
+td.not-playing .off-show-pause .song-number{
+  display: none;
+}
+
+/* If song is playing: show pause icon */
+td.on-playing .not-paused .ion-play,
+td.on-playing .not-paused .song-number{
+  display: none;
+}
+
+tr:hover {
+  display: "ion-play";
+}
+
+tr:hover .not-playing .not-paused .song-number{
+  display: none;
+}
+
+tr:hover .not-playing .off-show-pause .ion-play {
+  display: none;
+}
