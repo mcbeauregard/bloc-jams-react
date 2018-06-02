@@ -1,44 +1,27 @@
-.ion-play::before{
-  display: .song-number;
+/* When song is hovered, show play icon*/
+td:hover .ion-play {
+  display: block;
 }
 
-.ion-play {}
-
-.ion-pause {}
-
-.song-number {}
-
-.on-playing {}
-
-.off-show-play{}
-
-.show-number{}
-
-/* Song not playing, show song number */
-td.play-pause::before{
+/* When song is hovered, don't show song number or pause icon, show play icon */
+td:hover .song-number,
+td:hover .ion-pause {
   display: none;
 }
 
-/* Song paused, show play icon */
-td.not-playing .off-show-pause .ion-pause,
-td.not-playing .off-show-pause .song-number{
+/* When song-playing, show pause icon*/
+td.song-playing .ion-pause {
+  display: block;
+}
+
+/* When song-playing, don't show song-number or play icon */
+td.song-playing .song-number,
+td.song-playing .ion-play {
   display: none;
 }
 
-/* If song is playing: show pause icon */
-td.on-playing .not-paused .ion-play,
-td.on-playing .not-paused .song-number{
-  display: none;
-}
-
-tr:hover {
-  display: "ion-play";
-}
-
-tr:hover .not-playing .not-paused .song-number{
-  display: none;
-}
-
-tr:hover .not-playing .off-show-pause .ion-play {
+/* Song should song-number only, before play-pause actions */
+td .ion-play,
+td .ion-pause {
   display: none;
 }
