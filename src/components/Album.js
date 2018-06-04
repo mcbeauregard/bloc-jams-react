@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
-import "./Album.css";
+import './Album.css';
+import PlayerBar from './PlayerBar';
 
 class Album extends Component {
     constructor(props) {
@@ -59,6 +60,15 @@ mouseLeave = () => {
   console.log('leave');
 }
 
+//method to play previous song when users clicks - this method is passed to PlayerBar below, and then is assigned as event handler in the PlayerBar component.
+handlePrevClick() {
+  const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song); // finds index of first song
+  const newIndex = Math.max(0, currentIndex - 1); // calculates new index by subtracting one. Use Math.Max to ensure index doesn't go below 0
+  const newSong = this.state.album.songs[newIndex]; // Finds song with new index
+  this.setSong(newSong); // song with new index
+  this.play(); // plays new song
+}
+
   render() {
     return (
       <section className="album">
@@ -93,6 +103,13 @@ mouseLeave = () => {
             )}
           </tbody>
         </table>
+        <PlayerBar isPlaying={this.state.isPlaying} currentSong={this.state.currentSong} />
+        <PlayerBar
+          isPlaying={this.state.isPlaying}
+          currentSong={this.state.currentSong}
+          handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+          handlePrevClick={() => this.handlePrevClick()}
+        />
       </section>
     );
   }
