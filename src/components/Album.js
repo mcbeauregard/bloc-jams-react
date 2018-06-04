@@ -69,6 +69,15 @@ handlePrevClick() {
   this.play(); // plays new song
 }
 
+//method to play next song when users clicks - this method is passed to PlayerBar below, and then is assigned as event handler in the PlayerBar component.
+handleNexClick() {
+  const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+  const newIndex = Math.min(this.state.album.songs.length - 1, currentIndex + 1); // calculates new index by adding one. Use Math.min and length-1s, so index doesn't go beyond the last song (you can only click next on second to last song)
+  const newSong =  this.state.album.songs[newIndex];
+  this.setSong(newSong);
+  this.play();
+}
+
   render() {
     return (
       <section className="album">
@@ -109,6 +118,7 @@ handlePrevClick() {
           currentSong={this.state.currentSong}
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
           handlePrevClick={() => this.handlePrevClick()}
+          handleNexClick={() => this.handleNexClick()}
         />
       </section>
     );
