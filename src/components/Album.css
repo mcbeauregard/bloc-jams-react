@@ -1,0 +1,27 @@
+/* When song is hovered, show play icon*/
+td:hover .ion-play {
+  display: block;
+}
+
+/* When song is hovered, don't show song number or pause icon, show play icon */
+td:hover .song-number,
+td:hover .ion-pause {
+  display: none;
+}
+
+/* When song-playing, show pause icon*/
+td.song-playing .ion-pause {
+  display: block;
+}
+
+/* When song-playing, don't show song-number or play icon */
+td.song-playing .song-number,
+td.song-playing .ion-play {
+  display: none;
+}
+
+/* Song should song-number only, before play-pause actions */
+td .ion-play,
+td .ion-pause {
+  display: none;
+}
