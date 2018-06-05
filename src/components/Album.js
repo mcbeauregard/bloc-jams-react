@@ -148,6 +148,7 @@ handleTimeChange(e) { // new method to handle time change by user on the slider.
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
           handlePrevClick={() => this.handlePrevClick()}
           handleNexClick={() => this.handleNexClick()}
+          handleTimeChange={(e) => this.handleTimeChange(e)}
         />
       </section>
     );
