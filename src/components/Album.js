@@ -62,14 +62,6 @@ mouseLeave = () => {
   console.log('leave');
 }
 
-componentDidMount() {
-  this.audioElement.addEventListener('timeupdate', (e) => {
-    this.setState({ currentTime: this.audioElement.currentTime });
-  });
-  this.audioElement.addEventListener('durationchange', (e) => {
-    this.setState({ duration: this.audioElement.duration });
-  });
-}
 //method to play previous song when users clicks - this method is passed to PlayerBar below, and then is assigned as event handler in the PlayerBar component.
 handlePrevClick() {
   const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song); // finds index of first song
@@ -87,6 +79,25 @@ handleNexClick() {
   this.setSong(newSong);
   this.play();
 }
+
+componentDidMount() { // Updated to remove an event listener, so that it doesn't keep executing callback.
+  this.eventListeners = { // <- This is done by storing the callbacks via keyword `this`.
+    timeupdate: e => {
+      this.setState({ currentTime: this.audioElement.currentTime });
+    },
+    durationchange: e => {
+      this.setState({ duration: this.audioElement.duration });
+    }
+  };
+  this.audioElement.addEventListener('timeupdate', this.eventListeners.timeupdate);
+  this.audioElement.addEventListener('durationchange', this.eventListeners.durationchange);
+}
+
+componentWillUnmount() {   /// Prevents  event listeners from spawning errors, so set this.audioElement.src to null - this tells the HTML5 web audio API to terminate playback if user leaves the page otherwise it could keep running.
+  this.audioElement.src = null;
+  this.audioElement = null;
+}
+
 
   render() {
     return (
