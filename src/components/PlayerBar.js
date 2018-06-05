@@ -15,7 +15,7 @@ class PlayerBar extends Component {
             <span className="ion-skip-forward"></span>
           </button>
         </section>
-        <section id="time-control"> 
+        <section id="time-control">
         <div className="current-time">{this.props.currentTime}</div>
         <input
           type="range"
@@ -24,6 +24,7 @@ class PlayerBar extends Component {
           max="1"
           min="0"
           step="0.01"
+          onChange={this.props.handleTimeChange}
         />
         <div className="total-time">{this.props.duration}</div>
         </section>
