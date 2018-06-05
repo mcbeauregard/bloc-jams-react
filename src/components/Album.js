@@ -18,6 +18,8 @@ class Album extends Component {
       currentSong: album.songs[0],
       isPlaying: false,
       hovering: false,
+      currentTime: 0, // sets the initial state for the volume control
+      duration: album.songs[0].duration,
     };
 
     this.audioElement = document.createElement('audio'); // audio element: not assigning to state so it doesn't re-render. Need to access the audio element from within class methods, however, so we assign it to this.
@@ -115,6 +117,8 @@ handleNexClick() {
         <PlayerBar
           isPlaying={this.state.isPlaying}
           currentSong={this.state.currentSong}
+          currentTime={this.audioElement.currentTime} // Pass the iniital state from the Album to PlayerBar so that it can re-renders when time or duration change.
+          duration={this.audioElement.duration}
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
           handlePrevClick={() => this.handlePrevClick()}
           handleNexClick={() => this.handleNexClick()}
