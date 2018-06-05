@@ -95,7 +95,8 @@ componentDidMount() { // Updated to remove an event listener, so that it doesn't
 
 componentWillUnmount() {   /// Prevents  event listeners from spawning errors, so set this.audioElement.src to null - this tells the HTML5 web audio API to terminate playback if user leaves the page otherwise it could keep running.
   this.audioElement.src = null;
-  this.audioElement = null;
+  this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate); // terminates timeupdate eventListeners
+  this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange); // terminates durationchange eventListeners
 }
 
 
