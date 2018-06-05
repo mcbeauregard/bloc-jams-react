@@ -99,6 +99,12 @@ componentWillUnmount() {   /// Prevents  event listeners from spawning errors, s
   this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange); // terminates durationchange eventListeners
 }
 
+handleTimeChange(e) { // new method to handle time change by user on the slider. Accepts event data.
+  const newTime = this.audioElement.duration * e.target.value; // Calculates new time inthe song by multiplying durationg by value of range input from user.
+  this.audioElement.currentTime = newTime; // Updates audioElement's currentTime to a `newTime`.
+  this.setState({ currentTime: newTime }); // Updates current time to new time.
+}
+
 
   render() {
     return (
