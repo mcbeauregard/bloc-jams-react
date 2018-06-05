@@ -62,6 +62,14 @@ mouseLeave = () => {
   console.log('leave');
 }
 
+componentDidMount() {
+  this.audioElement.addEventListener('timeupdate', (e) => {
+    this.setState({ currentTime: this.audioElement.currentTime });
+  });
+  this.audioElement.addEventListener('durationchange', (e) => {
+    this.setState({ duration: this.audioElement.duration });
+  });
+}
 //method to play previous song when users clicks - this method is passed to PlayerBar below, and then is assigned as event handler in the PlayerBar component.
 handlePrevClick() {
   const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song); // finds index of first song
