@@ -124,7 +124,7 @@ formatTime(newTimeFormat){
   const min = Math.floor(newTimeFormat / 60);
   const sec = parseInt(newTimeFormat % 60);
   if (isNaN(newTimeFormat)) {
-    return '"-:--"';
+    return '-:--';
   }
    return min + ":" + sec + " seconds";
 }
@@ -167,7 +167,7 @@ formatTime(newTimeFormat){
         <PlayerBar
           isPlaying={this.state.isPlaying}
           currentSong={this.state.currentSong}
-          currentTime={this.audioElement.currentTime} // Pass the inital state from the Album to PlayerBar so that it can re-renders when time or duration change.
+          currentTime={this.audioElement.currentTime} // Pass the inital state from Album to PlayerBar so that it can re-renders when time or duration change.
           duration={this.audioElement.duration}
           volume={this.audioElement.volume}
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
