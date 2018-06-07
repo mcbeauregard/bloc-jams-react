@@ -26,30 +26,29 @@ class Album extends Component {
     this.audioElement.src = album.songs[0].audioSrc; // play the first song source. Song list is accessbile from album.song
   }
 
-  play() { // metod that plays an audio file
-    this.audioElement.play(); // tells audio element to play song
-    this.setState({ isPlaying: true }); // state of isPlaying is true so song is playing
+play() { // metod that plays an audio file
+  this.audioElement.play(); // tells audio element to play song
+  this.setState({ isPlaying: true }); // state of isPlaying is true so song is playing
+}
+
+pause() {
+  this.audioElement.pause(); // tells audio element to pause song
+  this.setState({ isPlaying: false }); // state of isPlaying is false so song has stopped
+}
+
+setSong(song) { // recieves song
+  this.audioElement.src = song.audioSrc; // song is recieved and updates this.audioElement.src with the new song source
+  this.setState({ currentSong: song }); // song is recieved and updates this.state.currentSong
+}
+
+handleSongClick(song) {
+  const isSameSong = this.state.currentSong === song; // Event: when a song is clicked, this variable returns true if a user clicks on the current song, and false if otherwise.
+  if (this.state.isPlaying && isSameSong) { // if this.state.isPlaying and isSameSong are true, pause song, if not play song.
+   this.pause();
+  } else {
+  if (!isSameSong) { this.setSong(song); } // if another song is clicked, on click new song should play.
+  this.play();
   }
-
-   pause() {
-     this.audioElement.pause(); // tells audio element to pause song
-     this.setState({ isPlaying: false }); // state of isPlaying is false so song has stopped
-   }
-
-
-  setSong(song) { // recieves song
-   this.audioElement.src = song.audioSrc; // song is recieved and updates this.audioElement.src with the new song source
-   this.setState({ currentSong: song }); // song is recieved and updates this.state.currentSong
- }
-
- handleSongClick(song) {
-   const isSameSong = this.state.currentSong === song; // Event: when a song is clicked, this variable returns true if a user clicks on the current song, and false if otherwise.
-   if (this.state.isPlaying && isSameSong) { // if this.state.isPlaying and isSameSong are true, pause song, if not play song.
-     this.pause();
-   } else {
-   if (!isSameSong) { this.setSong(song); } // if another song is clicked, on click new song should play.
-     this.play();
-   }
  }
 
 mouseEnter = () => {
@@ -119,6 +118,15 @@ handleVolumeChange(e) { // new method to handle volume change by user on the vol
   this.setState({ volume: newVolume}); // Updates new volume levels.
 }
 
+
+formatTime(newTimeFormat){
+  console.log('handle format time called')
+  const min = Math.floor(newTimeFormat / 60);
+  const sec = parseInt(newTimeFormat % 60);
+  return min + ":" + sec + " seconds";
+}
+
+
   render() {
     return (
       <section className="album">
@@ -157,13 +165,14 @@ handleVolumeChange(e) { // new method to handle volume change by user on the vol
           isPlaying={this.state.isPlaying}
           currentSong={this.state.currentSong}
           currentTime={this.audioElement.currentTime} // Pass the inital state from the Album to PlayerBar so that it can re-renders when time or duration change.
-          duration={this.audioElement.duration} //
+          duration={this.audioElement.duration}
           volume={this.audioElement.volume}
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
           handlePrevClick={() => this.handlePrevClick()}
           handleNexClick={() => this.handleNexClick()}
           handleTimeChange={(e) => this.handleTimeChange(e)}
           handleVolumeChange={(e) => this.handleVolumeChange(e)}
+          formatTime={(e) => this.formatTime(e)}
         />
       </section>
     );
