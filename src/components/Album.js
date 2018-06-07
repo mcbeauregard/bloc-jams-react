@@ -124,7 +124,7 @@ formatTime(newTimeFormat){
   const min = Math.floor(newTimeFormat / 60);
   const sec = parseInt(newTimeFormat % 60);
   if (isNaN(newTimeFormat)) {
-    return '"-:--"';
+    return '-:--';
   }
    return min + ":" + sec + " seconds";
 }
