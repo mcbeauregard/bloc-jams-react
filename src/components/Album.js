@@ -123,7 +123,10 @@ formatTime(newTimeFormat){
   console.log('handle format time called')
   const min = Math.floor(newTimeFormat / 60);
   const sec = parseInt(newTimeFormat % 60);
-  return min + ":" + sec + " seconds";
+  if (isNaN(newTimeFormat)) {
+    return '"-:--"';
+  }
+   return min + ":" + sec + " seconds";
 }
 
 
