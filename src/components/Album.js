@@ -18,7 +18,7 @@ class Album extends Component {
       currentSong: album.songs[0],
       isPlaying: false,
       hovering: false,
-      currentTime: 0, // sets the initial state for the volume control
+      currentTime: 0, // sets the initial state for the time control
       duration: album.songs[0].duration,
     };
 
@@ -80,31 +80,44 @@ handleNexClick() {
   this.play();
 }
 
-componentDidMount() { // Updated to remove an event listener, so that it doesn't keep executing callback.
+// Udates seek bar on playback by using events triggered by the audio element
+componentDidMount() { // This method is called by React when a component has been added to the DOM (i.e. handleVolumeChange)via events or API calls. * This method was updated to remove an event listener, so that it doesn't keep executing callback.
   this.eventListeners = { // <- This is done by storing the callbacks via keyword `this`.
     timeupdate: e => {
       this.setState({ currentTime: this.audioElement.currentTime });
     },
     durationchange: e => {
       this.setState({ duration: this.audioElement.duration });
+    },
+    volumechange: e => {
+      this.setState({ volume: this.audioElement.volume}); // volumechange callback
     }
   };
   this.audioElement.addEventListener('timeupdate', this.eventListeners.timeupdate);
   this.audioElement.addEventListener('durationchange', this.eventListeners.durationchange);
+  this.audioElement.addEventListener('volumechange', this.eventListeners.volumechange);
 }
 
 componentWillUnmount() {   /// Prevents  event listeners from spawning errors, so set this.audioElement.src to null - this tells the HTML5 web audio API to terminate playback if user leaves the page otherwise it could keep running.
   this.audioElement.src = null;
   this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate); // terminates timeupdate eventListeners
   this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange); // terminates durationchange eventListeners
+  this.audioElement.removeEventListener('volumechange', this.eventListeners.volumechange); // terminates volumechange eventListeners
 }
 
+
 handleTimeChange(e) { // new method to handle time change by user on the slider. Accepts event data.
-  const newTime = this.audioElement.duration * e.target.value; // Calculates new time inthe song by multiplying durationg by value of range input from user.
+  const newTime = this.audioElement.duration * e.target.value; // Calculates new time in the song by multiplying duration by value of range input from user.
   this.audioElement.currentTime = newTime; // Updates audioElement's currentTime to a `newTime`.
   this.setState({ currentTime: newTime }); // Updates current time to new time.
 }
 
+handleVolumeChange(e) { // new method to handle volume change by user on the volume slider. Accepts event data.
+  console.log('handle change called')
+  const newVolume = e.target.value; // Calculates the new volume in the song by value of range input from user.
+  this.audioElement.volume = newVolume; // Updates audioElement's volume to a `newVolume`
+  this.setState({ volume: newVolume}); // Updates new volume levels.
+}
 
   render() {
     return (
@@ -143,12 +156,14 @@ handleTimeChange(e) { // new method to handle time change by user on the slider.
         <PlayerBar
           isPlaying={this.state.isPlaying}
           currentSong={this.state.currentSong}
-          currentTime={this.audioElement.currentTime} // Pass the iniital state from the Album to PlayerBar so that it can re-renders when time or duration change.
-          duration={this.audioElement.duration}
+          currentTime={this.audioElement.currentTime} // Pass the inital state from the Album to PlayerBar so that it can re-renders when time or duration change.
+          duration={this.audioElement.duration} //
+          volume={this.audioElement.volume}
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
           handlePrevClick={() => this.handlePrevClick()}
           handleNexClick={() => this.handleNexClick()}
           handleTimeChange={(e) => this.handleTimeChange(e)}
+          handleVolumeChange={(e) => this.handleVolumeChange(e)}
         />
       </section>
     );
