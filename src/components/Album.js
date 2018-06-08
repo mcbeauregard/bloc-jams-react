@@ -175,7 +175,7 @@ formatTime(newTimeFormat){
           handleNexClick={() => this.handleNexClick()}
           handleTimeChange={(e) => this.handleTimeChange(e)}
           handleVolumeChange={(e) => this.handleVolumeChange(e)}
-          formatTime={(e) => this.formatTime(this.state.volume)}
+          formatTime={(e) => this.formatTime(e)}
         />
       </section>
     );
