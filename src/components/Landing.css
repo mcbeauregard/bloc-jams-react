@@ -1,0 +1,12 @@
+/*  wrapper */
+
+.landing {
+  padding: 0 200px;
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #e8e7e7;
+}
+
+.hero-title {
+  display: block;
+}
