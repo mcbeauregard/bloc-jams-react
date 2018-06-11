@@ -9,20 +9,6 @@ body {
   background-attachment: fixed;
 }
 
-h1 {
-  font-family: 'Avenir Next';
-  color: white;
-  font-size: 46px;
-  letter-spacing: 1px;
-}
-
-h2 {
-  font-family: 'Avenir Next';
-  color: white;
-  letter-spacing: 2.5px;
-  line-height: 2.5em;
-}
-
 p {
   font-family: 'Avenir Next';
   font-size: 20px;
