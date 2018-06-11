@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 
+=======
+>>>>>>> feature-eight
 
 class PlayerBar extends Component {
   render() {

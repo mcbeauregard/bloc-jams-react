@@ -1,4 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
+import '../index.css'
+>>>>>>> feature-eight
 
 const Landing = () => (
   <section className="landing">
