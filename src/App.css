@@ -18,10 +18,10 @@ header {
 
 .App-title {
   font-family: 'Avenir Next';
-  font-size: 1.5em;
+  font-size: 1em;
   color: white;
   position: relative;
-  top: 15px;
+  top: 25px;
   float: left;
 }
 
@@ -38,7 +38,7 @@ header {
 
 .topbar-right {
   float: right;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 /*  navigation */
