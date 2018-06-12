@@ -1,10 +1,9 @@
 /*  wrapper */
 
 .landing {
-  padding: 0 200px;
+  padding: 50px 0px;
   width: 1200px;
   margin: 0 auto;
-  background-color: #e8e7e7;
 }
 
 .hero-title {
@@ -12,7 +11,15 @@
 }
 
 .App-title {
-  display: none;
+  display: block;
+}
+
+.selling-points {
+  text-align: left;
+  padding: 50px 650px 50px 50px;
+  background-color: white;
+  margin-top: 330px;
+  display: block;
 }
 
 h1 {
@@ -24,7 +31,7 @@ h1 {
 
 h2 {
   font-family: 'Avenir Next';
-  color: white;
+  color: black;
   letter-spacing: 2.5px;
   line-height: 2.5em;
 }
@@ -32,6 +39,6 @@ h2 {
 p {
   font-family: 'Avenir Next';
   font-size: 20px;
-  color: white;
+  color: black;
   line-height: 1.8em;
 }
