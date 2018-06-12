@@ -1,29 +1,30 @@
 /*------Basic------*/
 
 body {
+  width: 1200px;
   margin: 0 auto;
   background: linear-gradient(to bottom right, #0fb8ad, #2cb5e8);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
+p {
+  font-family: 'Avenir Next';
+  font-size: 20px;
+  color: white;
+  line-height: 1.8em;
+}
+
+h1 {
+  font-family: 'Avenir Next';
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
 h2 {
   font-family: 'Avenir Next';
   color: white;
-  letter-spacing: 2.5px;
-  line-height: 2.5em;
-}
-
-p {
-  font-family: 'Avenir Next';
-  font-size: 20px;
-  color: white;
-  line-height: 1.8em;
-}
-
-p {
-  font-family: 'Avenir Next';
-  font-size: 20px;
-  color: white;
-  line-height: 1.8em;
+  margin-top: 0px;
+  margin-bottom: 15px;
 }
