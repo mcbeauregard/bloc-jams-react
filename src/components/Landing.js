@@ -2,6 +2,10 @@ import React from 'react';
 <<<<<<< HEAD
 =======
 import '../index.css'
+<<<<<<< HEAD
+>>>>>>> feature-eight
+=======
+import styles from './Landing.css';
 >>>>>>> feature-eight
 
 const Landing = () => (
