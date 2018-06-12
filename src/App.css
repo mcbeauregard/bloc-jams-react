@@ -1,12 +1,10 @@
-.App {
-  text-align: center;
-  width: 100%
-}
+/*  font */
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-  margin-top: 0px
+h1 {
+  font-family: 'Avenir Next';
+  color: white;
+  margin-top: 0px;
+  padding-top: 100px;
 }
 
 .App-title {
@@ -19,24 +17,23 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/*  wrapper */
+
+.App {
+  text-align: center;
+  width: 100%;
 }
 
-h1 {
-  font-family: 'Avenir Next';
-  color: white;
-  margin-top: 0px;
-  padding-top: 100px;
-}
+/*  header */
 
-.topbar {
-  position: absolute;
-  padding: 0px 317px;
-  margin-top: 0px;
+header {
+  position: relative;
   background-color: black;
+  min-height: 80px;
+  margin-bottom: 0;
 }
+
+/*  topbar */
 
 .topbar-left {
   float: left;
@@ -45,6 +42,8 @@ h1 {
 .topbar-right {
   float: right;
 }
+
+/*  navigation */
 
 nav {
   width: 950px;
@@ -66,10 +65,26 @@ nav a {
   font-family: 'Avenir Next';
 }
 
-
 nav a img {
   width: 75px;
 }
+
+/*  logo */
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+  position: absolute;
+  margin-top: 0px;
+  transform: translateX(-26%);
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/*  hero */
 
 .hero {
   color: #4D4B56;
