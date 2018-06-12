@@ -11,6 +11,10 @@
   display: block;
 }
 
+.App-title {
+  display: none;
+}
+
 h1 {
   font-family: 'Avenir Next';
   color: white;
