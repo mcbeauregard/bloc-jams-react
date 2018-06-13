@@ -1,23 +1,4 @@
-/*  wrapper */
-
-.landing {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-.hero-title {
-  display: block;
-  padding: 250px 0;
-  text-align: center;
-  font-size: 64px;
-}
-
-.selling-points {
-  text-align: left;
-  padding: 50px 650px 50px 100px;
-  background-color: white;
-  display: block;
-}
+/* fonts */
 
 h1 {
   font-family: 'Avenir Next';
@@ -39,28 +20,55 @@ p {
   line-height: 1.8em;
 }
 
+/*  wrapper */
+
+.landing {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  display: block;
+  padding: 250px 0;
+  text-align: center;
+  font-size: 64px;
+}
+
+.selling-points {
+  background-color: white;
+  display: table;
+  vertical-align: bottom;
+}
+
+.selling-points-left {
+  text-align: left;
+  padding: 50px 250px 50px 100px;
+  background-color: white;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
 /* Album Covers */
+
+.selling-points-right{
+  display: table-cell;
+  vertical-align: bottom;
+}
 
 .album-covers-01 {
   width: 215px;
-  transform: translateY(-210%);
-  padding-left: 600px;
+  transform:translate(-100%,68.5%);
+  vertical-align: top;
 }
 
 .album-covers-02 {
   width: 215px;
-  transform: translateY(-312%);
-  padding-left: 815px;
+  transform: translateY(-31.5%);
+  margin-bottom: 0px;
+  vertical-align: top;
 }
 
 .album-covers-03 {
   width: 215px;
-  transform: translateY(-315%);
-  padding-left: 600px;
-}
-
-.album-covers-04 {
-  width: 215px;
-  transform: translateY(-312%);
-  padding-left: 600px;
+  transform: translate(-100%,-32%);
 }
