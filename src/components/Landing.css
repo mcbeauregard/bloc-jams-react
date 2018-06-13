@@ -38,3 +38,29 @@ p {
   color: black;
   line-height: 1.8em;
 }
+
+/* Album Covers */
+
+.album-covers-01 {
+  width: 215px;
+  transform: translateY(-210%);
+  padding-left: 600px;
+}
+
+.album-covers-02 {
+  width: 215px;
+  transform: translateY(-312%);
+  padding-left: 815px;
+}
+
+.album-covers-03 {
+  width: 215px;
+  transform: translateY(-315%);
+  padding-left: 600px;
+}
+
+.album-covers-04 {
+  width: 215px;
+  transform: translateY(-312%);
+  padding-left: 600px;
+}
