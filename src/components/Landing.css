@@ -57,18 +57,18 @@ p {
 
 .album-covers-01 {
   width: 215px;
-  transform:translate(-100%,68.5%);
+  transform:translate(-100%,58.5%);
   vertical-align: top;
 }
 
 .album-covers-02 {
   width: 215px;
-  transform: translateY(-31.5%);
+  transform: translateY(-41.5%);
   margin-bottom: 0px;
   vertical-align: top;
 }
 
 .album-covers-03 {
   width: 215px;
-  transform: translate(-100%,-32%);
+  transform: translate(-100%,-42%);
 }
