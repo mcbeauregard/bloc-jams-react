@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+>>>>>>> feature-eight
+=======
+import styles from './PlayerBar.css';
 >>>>>>> feature-eight
 
 class PlayerBar extends Component {

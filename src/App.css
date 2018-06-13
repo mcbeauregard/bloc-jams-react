@@ -14,6 +14,13 @@ header {
   margin-bottom: 0;
 }
 
+/* Font */
+
+h1 {
+  font-family: 'Avenir Next';
+  color: white;
+}
+
 /*  Title */
 
 .App-title {
@@ -23,6 +30,7 @@ header {
   position: relative;
   top: 25px;
   float: left;
+  letter-spacing: 1px;
 }
 
 .App-intro {
