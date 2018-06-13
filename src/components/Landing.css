@@ -1,31 +1,27 @@
 /*  wrapper */
 
 .landing {
-  padding: 50px 0px;
   width: 1200px;
   margin: 0 auto;
 }
 
 .hero-title {
   display: block;
-}
-
-.App-title {
-  display: block;
+  padding: 250px 0;
+  text-align: center;
+  font-size: 64px;
 }
 
 .selling-points {
   text-align: left;
-  padding: 50px 650px 50px 50px;
+  padding: 50px 650px 50px 100px;
   background-color: white;
-  margin-top: 330px;
   display: block;
 }
 
 h1 {
   font-family: 'Avenir Next';
   color: white;
-  font-size: 46px;
   letter-spacing: 1px;
 }
 
