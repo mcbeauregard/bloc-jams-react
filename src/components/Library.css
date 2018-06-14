@@ -1,0 +1,53 @@
+.library .album {
+  display: table;
+  position: relative;
+  text-align: left;
+  width: 175px;
+  float: left;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.library img {
+  width: 175px;
+  display: table-cell;
+}
+
+.library div {
+  font-size: 1rem;
+  font-weight: 300px;
+}
+
+.library-text {
+  background: white;
+  display: table-cell;
+  width: 165px;
+  padding: 5px 5px;
+}
+
+.library .album-title {
+  font-size: 1.25rem;
+  display: table-cell;
+}
+
+.library .album-artist,
+.library .album-song-count {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  display: table-cell;
+}
+
+.library a {
+  display: inline-block;
+  padding: 0 20px;
+  float: left;
+  position: relative;
+  transform: translate(100%,25%);
+  display: block;
+  top: 30px;
+  color: #232323;
+  font-weight: 400px;
+  text-decoration: none;
+  font-weight: 400px;
+  font-family: 'Avenir Next';
+}

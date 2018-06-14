@@ -23,7 +23,7 @@ p {
 /*  wrapper */
 
 .landing {
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -32,6 +32,7 @@ p {
   padding: 250px 0;
   text-align: center;
   font-size: 64px;
+    position: relative;
 }
 
 .selling-points {
@@ -57,13 +58,13 @@ p {
 
 .album-covers-01 {
   width: 215px;
-  transform:translate(-100%,58.5%);
+  transform:translate(-50%,-41.5%);
   vertical-align: top;
 }
 
 .album-covers-02 {
   width: 215px;
-  transform: translateY(-41.5%);
+  transform: translate(-51%,-41.5%);
   margin-bottom: 0px;
   vertical-align: top;
 }

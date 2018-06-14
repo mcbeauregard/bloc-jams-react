@@ -64,9 +64,6 @@ nav a {
   transform: translateY(-50%);
   display: block;
   top: 30px;
-}
-
-nav a {
   text-decoration: none;
   color: white;
   font-family: 'Avenir Next';
