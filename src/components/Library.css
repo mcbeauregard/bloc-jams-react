@@ -42,7 +42,7 @@
   padding: 0 20px;
   float: left;
   position: relative;
-  transform: translate(0%,25%);
+  transform: translate(100%,25%);
   display: block;
   top: 30px;
   color: #232323;

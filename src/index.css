@@ -1,7 +1,7 @@
 /*------Basic------*/
 
 body {
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
   background: linear-gradient(to bottom right, #551a8b, #A100F6);
   background-repeat: no-repeat;
