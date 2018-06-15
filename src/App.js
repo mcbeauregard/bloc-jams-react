@@ -20,9 +20,6 @@ class App extends Component {
           </div>
         </nav>
         </div>
-        <div className="App-title">
-        <h1>Bloc Jams</h1>
-        </div>
       </header>
       <main>
         <Route exact path="/" component={Landing} />
