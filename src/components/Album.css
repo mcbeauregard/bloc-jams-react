@@ -35,7 +35,8 @@ body {
 /* album info */
 
 #album-info {
-  display: table;
+  display: block;
+  margin-left: 50px;
 }
 
 #album-info img {
@@ -75,6 +76,8 @@ body {
 
 #song-list {
   width: 950px;
+  display: block;
+  margin-left: 50px;
   padding-left: 100px;
   padding-right: 0px;
   text-align: center;
@@ -93,7 +96,7 @@ td.song-playing{
 td.song-title {
   display: inline-block;
   text-align: left;
-  width: 655px;
+  width: 665px;
   border-bottom: 1px solid #ffff;
   padding-left: 25px;
 }
