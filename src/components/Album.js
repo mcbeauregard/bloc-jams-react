@@ -122,7 +122,7 @@ handleVolumeChange(e) { // new method to handle volume change by user on the vol
 formatTime(newTimeFormat){
   console.log('handle format time called')
   const min = Math.floor(newTimeFormat / 60);
-  const sec = parseInt(newTimeFormat % 60);
+  const sec = Number(newTimeFormat % 60);
   if (sec < 10) {
     return "0:0" + sec;
   } else if (isNaN(min || sec)) {
@@ -161,7 +161,7 @@ formatTime(newTimeFormat){
                   </button>
                 </td>
                 <td className="song-title" >{song.title}</td>
-                <td className="song-duration">{Math.floor(song.duration / 60) + ":" + parseInt(song.duration  % 60)} </td>
+                <td className="song-duration">{Math.floor(song.duration / 60) + ":" + Number(song.duration  % 60)} </td>
               </tr>
             )}
           </tbody>
