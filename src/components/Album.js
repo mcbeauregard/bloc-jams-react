@@ -161,11 +161,7 @@ formatTime(newTimeFormat){
                   </button>
                 </td>
                 <td className="song-title" >{song.title}</td>
-<<<<<<< HEAD
-                <td className="song-duration">{Math.floor(song.duration / 60) + ":" + parseInt(song.duration  % 60) } </td>
-=======
                 <td className="song-duration">{Math.floor(song.duration / 60) + ":" + parseInt(song.duration  % 60)} </td>
->>>>>>> feature-eight
               </tr>
             )}
           </tbody>
