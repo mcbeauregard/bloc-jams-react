@@ -1,6 +1,6 @@
 import React from 'react';
 import '../index.css'
-import styles from './Landing.css';
+import './Landing.css';
 
 const Landing = () => (
   <section className="landing">
@@ -21,9 +21,10 @@ const Landing = () => (
       </div>
       </div>
       <div className="selling-points-right">
-        <img className="album-covers-01" src='./../assets/images/album_covers/01.jpg'/>
-        <img className="album-covers-02" src='./../assets/images/album_covers/02.jpg'/>
-        <img className="album-covers-03" src='./../assets/images/album_covers/03.jpg'/>
+        <img className="album-covers-01" src='./../assets/images/album_covers/01.jpg' alt="album cover"/>
+        <img className="album-covers-02" src='./../assets/images/album_covers/02.jpg' alt="album cover"/>
+        <img className="album-covers-03" src='./../assets/images/album_covers/03.jpg' alt="album cover"/>
+        <img className="album-covers-04" src='./../assets/images/album_covers/04.jpg' alt="album cover"/>
       </div>
     </section>
   </section>
