@@ -13,14 +13,14 @@ class App extends Component {
         <div className="topbar">
         <nav>
           <div className="topbar-left">
-          <Link className='App-logo' to='/'><img src='./../assets/images/bloc_jams_logo.png'/></Link>
+          <Link className='App-logo' to='/'><img src='./../assets/images/bloc_jams_logo.png' alt="Bloc Jams logo"/></Link>
           </div>
           <div className="topbar-right">
           <Link to='/library'>Library</Link>
           </div>
         </nav>
         </div>
-        <div class="App-title">
+        <div className="App-title">
         <h1>Bloc Jams</h1>
         </div>
       </header>
