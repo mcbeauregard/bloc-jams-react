@@ -62,14 +62,13 @@ body {
 .album-details .artist {
   font-size: 1rem;
   display: block;
-  color: white;
-  opacity: .8;
+  color: grey;
 }
 
 .album-details #release-info {
   font-size: 1rem;
   display: block;
-  color: ligthgrey;
+  color: grey;
 }
 
 /* Song list */

@@ -8,14 +8,14 @@
 /* column one */
 #buttons {
   display: table-cell;
-  width: 400px;
+  width: 325px;
   padding: 50px;
   align-items: center;
 }
 
 #previous, #play-pause, #next{
-  margin-right: 30px;
-  transform: translate(300%, 110%);
+  margin-right: 15px;
+  transform: translate(385%, 110%);
   width: 40px;
   height: 20px;
 }
@@ -48,7 +48,7 @@
 #volume-control .seek-bar {
   transform: translateY(2%);
   width: 25%;
-  margin-left: 8%;
+  margin-left: 6%;
 }
 
 .ion-volume-low {
@@ -58,7 +58,7 @@
 
 .ion-volume-high {
   display: table-cell;
-  transform: translate(1080%, -100%);
+  transform: translate(1078%, -102%);
 }
 
 /* seekbars */
