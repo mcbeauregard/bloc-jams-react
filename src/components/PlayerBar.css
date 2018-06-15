@@ -1,44 +1,25 @@
-.App-title {
-}
-
-body {
-  background-image: url(/assets/images/blurred_backgrounds/blur_bg_3.jpg);
-}
-
-/* album info */
-
-#album-info {
-  display: table;
-}
-
-#album-info img {
-  width: 180px;
+.player-bar {
+  width: 100%;
   display: block;
-  float: left;
-  padding: 50px 30px 50px 100px;
+  padding: 50px 0 50px 0px;
+  background: hsla(0, 0%, 50%, 0.1);
 }
 
-.album-details {
+#buttons {
+  display: inline-block;
+  width: 200px;
+  padding: 0 50px 0 50px;
+}
+
+#time-control {
+  display: inline-block;
   text-align: left;
-  float: right;
-  padding: 90px 50px 50px 0px;
-  letter-spacing: 1px;
-  line-height: 0.3em;
+  width: 665px;
+  padding-left: 25px;
 }
 
-.album-details #album-title {
-  font-size: 1.8em;
-  display: block;
-}
-
-.album-details .artist {
-  font-size: 1rem;
-  display: block;
-  color: white;
-}
-
-.album-details #release-info {
-  font-size: 1rem;
-  display: block;
-  color: grey;
+#volume-control {
+  display: inline-block;
+  text-align: left;
+  width: 200px;
 }
