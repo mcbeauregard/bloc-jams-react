@@ -1,25 +1,66 @@
 .player-bar {
   width: 100%;
-  display: block;
+  display: table;
   padding: 50px 0 50px 0px;
-  background: hsla(0, 0%, 50%, 0.1);
+  background: hsla(289, 30%, 50%, 0.5);
 }
 
+/* column one */
 #buttons {
-  display: inline-block;
-  width: 200px;
-  padding: 0 50px 0 50px;
+  display: table-cell;
+  width: 350px;
+  padding: 50px;
 }
 
+#previous {
+  margin-left: 150px;
+  margin-right: 30px;
+  transform: translateY(110%);
+}
+
+#play-pause {
+  margin-right: 30px;
+  transform: translateY(110%);
+}
+
+#next {
+  transform: translateY(110%);
+}
+
+/* column two */
 #time-control {
-  display: inline-block;
+  display: table-cell;
   text-align: left;
-  width: 665px;
-  padding-left: 25px;
+  width: 650px;
+  padding-bottom: 25px;
+  font-size: 14px;
 }
 
+.current-time {
+  display: table-cell;
+  transform: translate(10%, 225%);
+}
+
+.total-time {
+  display: table-cell;
+  transform: translateX(1240%);
+}
+
+/* column three */
 #volume-control {
-  display: inline-block;
+  display: table-cell;
   text-align: left;
-  width: 200px;
+  width: 450px;
+}
+
+#volume-control .seek-bar {
+  transform: translateY(140%);
+  width: 35%;
+}
+
+/* seekbars */
+
+.seek-bar {
+  opacity: 0.7;
+  width: 75%;
 }
