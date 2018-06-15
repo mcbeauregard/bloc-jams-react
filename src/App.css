@@ -21,6 +21,9 @@ h1 {
   color: white;
 }
 
+body {
+  font-family: 'Avenir Next';
+}
 /*  Title */
 
 .App-title {

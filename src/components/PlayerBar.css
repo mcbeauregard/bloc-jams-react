@@ -6,34 +6,40 @@ body {
   background-image: url(/assets/images/blurred_backgrounds/blur_bg_3.jpg);
 }
 
-#album-info img {
+/* album info */
+
+#album-info {
   display: table;
 }
 
 #album-info img {
   width: 180px;
-  display: table-cell;
-  padding: 50px 50px 50px 20px;
+  display: block;
+  float: left;
+  padding: 50px 30px 50px 100px;
 }
 
 .album-details {
-  display: table-cell;
   text-align: left;
+  float: right;
+  padding: 75px 50px 50px 0px;
+  letter-spacing: 1px;
+  line-height: 0.3em;
 }
 
 .album-details #album-title {
   font-size: 1.25rem;
-  display: table-cell;
+  display: block;
 }
 
 .album-details .artist {
   font-size: 1rem;
-  display: table-cell;
+  display: block;
   color: white;
 }
 
 .album-details #release-info {
   font-size: 1rem;
-  display: table-cell;
+  display: block;
   color: white;
 }
