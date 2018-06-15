@@ -73,3 +73,8 @@ p {
   width: 215px;
   transform: translate(-100%,-42%);
 }
+
+.album-covers-04 {
+  width: 215px;
+  transform: translate(-50%,-50%);
+}
