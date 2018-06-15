@@ -41,6 +41,8 @@ p {
   position: relative;
 }
 
+/* selling points */
+
 .selling-points {
   background-color: white;
   display: table;
@@ -55,12 +57,12 @@ p {
   vertical-align: bottom;
 }
 
-/* Album Covers */
-
 .selling-points-right{
   display: table-cell;
   vertical-align: bottom;
 }
+
+/* Album Covers */
 
 .album-covers-01 {
   width: 215px;
