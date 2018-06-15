@@ -1,5 +1,4 @@
 .App-title {
-  display: block;
 }
 
 body {
@@ -22,13 +21,13 @@ body {
 .album-details {
   text-align: left;
   float: right;
-  padding: 75px 50px 50px 0px;
+  padding: 90px 50px 50px 0px;
   letter-spacing: 1px;
   line-height: 0.3em;
 }
 
 .album-details #album-title {
-  font-size: 1.25rem;
+  font-size: 1.8em;
   display: block;
 }
 
@@ -41,5 +40,5 @@ body {
 .album-details #release-info {
   font-size: 1rem;
   display: block;
-  color: white;
+  color: grey;
 }

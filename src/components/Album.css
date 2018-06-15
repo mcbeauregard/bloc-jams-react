@@ -25,3 +25,82 @@ td .ion-play,
 td .ion-pause {
   display: none;
 }
+
+/* album body */
+
+body {
+  background-image: url(/assets/images/blurred_backgrounds/blur_bg_3.jpg);
+}
+
+/* album info */
+
+#album-info {
+  display: table;
+}
+
+#album-info img {
+  width: 180px;
+  display: block;
+  float: left;
+  padding: 50px 30px 50px 100px;
+}
+
+.album-details {
+  text-align: left;
+  float: right;
+  padding: 90px 50px 50px 0px;
+  letter-spacing: 1px;
+  line-height: 0.3em;
+}
+
+.album-details #album-title {
+  font-size: 1.8em;
+  display: block;
+}
+
+.album-details .artist {
+  font-size: 1rem;
+  display: block;
+  color: white;
+  opacity: .8;
+}
+
+.album-details #release-info {
+  font-size: 1rem;
+  display: block;
+  color: grey;
+}
+
+/* Song list */
+
+#song-list {
+  width: 950px;
+  padding-left: 100px;
+  padding-right: 0px;
+  text-align: center;
+  opacity: 0.75;
+  line-height: 4.5em;
+}
+
+td.not-playing,
+td.song-playing{
+  display: inline-block;
+  text-align: center;
+  width: 75px;
+  border-bottom: 1px solid #ffff;
+}
+
+td.song-title {
+  display: inline-block;
+  text-align: left;
+  width: 655px;
+  border-bottom: 1px solid #ffff;
+  padding-left: 25px;
+}
+
+td.song-duration {
+  display: inline-block;
+  text-align: left;
+  width: 75px;
+  border-bottom: 1px solid #ffff;
+}

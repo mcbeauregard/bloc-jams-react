@@ -1,7 +1,6 @@
 /*  wrapper */
 
 .App {
-  text-align: center;
   width: 100%;
 }
 
@@ -23,7 +22,9 @@ h1 {
 
 body {
   font-family: 'Avenir Next';
+  color: white;
 }
+
 /*  Title */
 
 .App-title {
