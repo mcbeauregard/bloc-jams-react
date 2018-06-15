@@ -161,7 +161,7 @@ formatTime(newTimeFormat){
                   </button>
                 </td>
                 <td className="song-title" >{song.title}</td>
-                <td className="song-duration">{Math.floor(song.duration / 60) + ":" + parseInt(song.duration  % 60) + " seconds" } </td>
+                <td className="song-duration">{Math.floor(song.duration / 60) + ":" + parseInt(song.duration  % 60) } </td>
               </tr>
             )}
           </tbody>
