@@ -120,7 +120,6 @@ handleVolumeChange(e) { // new method to handle volume change by user on the vol
 
 
 formatTime(newTimeFormat){
-  console.log('handle format time called')
   const min = Math.floor(newTimeFormat / 60);
   const sec = parseInt(newTimeFormat % 60);
   if (sec < 10) {
