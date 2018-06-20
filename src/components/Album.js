@@ -53,12 +53,10 @@ handleSongClick(song) {
 
 mouseEnter = () => {
   this.setState({ hovering: true });
-  console.log('enter');
 }
 
 mouseLeave = () => {
   this.setState({ hovering: false });
-  console.log('leave');
 }
 
 //method to play previous song when users clicks - this method is passed to PlayerBar below, and then is assigned as event handler in the PlayerBar component.
@@ -112,7 +110,6 @@ handleTimeChange(e) { // new method to handle time change by user on the slider.
 }
 
 handleVolumeChange(e) { // new method to handle volume change by user on the volume slider. Accepts event data.
-  console.log('handle change called')
   const newVolume = e.target.value; // Calculates the new volume in the song by value of range input from user.
   this.audioElement.volume = newVolume; // Updates audioElement's volume to a `newVolume`
   this.setState({ volume: newVolume}); // Updates new volume levels.
