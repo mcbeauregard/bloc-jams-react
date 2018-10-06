@@ -1,9 +1,9 @@
 A replica of Spotify - it plays some tunes. Built with React and styled with CSS.
 
-<img src='./src/data/images/bloc-jams.jpeg' alt='online music player'/>
+<img src='./src/data/images/bloc-jams.jpg' alt='online music player'/>
 
 Features functional media controls, song duration, and volume seek bars:
-<img src='./src/data/images/bloc-jams-music-player.jpeg' alt='media control bar'/>
+<img src='./src/data/images/bloc-jams-music-player.jpg' alt='media control bar'/>
 
 Album page:
 <img src='./src/data/images/bloc-jams-album-page.png' alt='album page'/>
